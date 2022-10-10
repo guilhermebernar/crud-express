@@ -1,5 +1,5 @@
 
-const verifyCategoryCreation = (req, res, next) => {;
+const verifyCategory = (req, res, next) => {;
     const name = req.body.name;
     
     if (name===undefined) 
@@ -21,4 +21,4 @@ const verifyCategoryCreation = (req, res, next) => {;
     next();
 };
 
-export default verifyCategoryCreation;
+export default verifyCategory;
