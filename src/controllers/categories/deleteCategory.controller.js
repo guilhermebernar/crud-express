@@ -1,6 +1,6 @@
 import deleteCategoryService from "../../services/categories/deleteCategory.service";
 
-const updateCategoryController = async (req, res) => {
+const deleteCategoryController = async (req, res) => {
     const { id } = req.headers;
 
     try{
@@ -12,4 +12,4 @@ const updateCategoryController = async (req, res) => {
     }
 }
 
-export default updateCategoryController;
+export default deleteCategoryController;
