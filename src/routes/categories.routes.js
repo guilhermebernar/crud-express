@@ -8,7 +8,7 @@ import verifyCategory from '../middlewares/categories/verifyCategory.middleware'
 
 const categoriesRoute = Router();
 
-categoriesRoute.post('', verifyCategory, createCategoryController);
+categoriesRoute.post('',verifyCategory, createCategoryController);
 categoriesRoute.get('', listAllController);
 categoriesRoute.get('/:id', listCategoryController);
 categoriesRoute.patch('/:id', updateCategoryController);

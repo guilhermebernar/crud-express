@@ -1,5 +1,5 @@
-const verifyCategory = (req, res, next) => {;
-    const {id} = req.headers;
+const verifyInputs = (req, res, next) => {;
+    const {id} = req.params;
     if (id===undefined) 
     {
         return res
@@ -33,4 +33,4 @@ const verifyCategory = (req, res, next) => {;
     next();
 };
 
-export default verifyCategory;
+export default verifyInputs;

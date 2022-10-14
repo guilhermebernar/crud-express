@@ -1,15 +1,14 @@
 import updateCategoryService from "../../services/categories/updateCategory.service";
 
 const updateCategoryController = async (req, res) => {
-    const { id } = req.headers;
-    const { name } = req.body;
-
     try{
-        const data = await updateCategoryService(id, name);
-        return res.status(201).json(data);
+        const { id } = req.params;
+        const { name } = req.body;
+        const category = await updateCategoryService(id, name);
+        return res.status(200).json({message:"Updated successfully", category:{name:name}});
 
     }catch(err){
-        return res.status(400).json(err.message);
+        return res.status(400).json({message: err.message});
     }
 }
 

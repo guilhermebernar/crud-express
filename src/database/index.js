@@ -4,7 +4,7 @@ const database = new Client(
   process.env.NODE_ENV === "test"
     ? {
         user: "postgres",
-        host: "localhoast",
+        host: "localhost",
         database: "tests_products",
         password: process.env.DB_PASSWORD,
         port: process.env.DB_PORT,

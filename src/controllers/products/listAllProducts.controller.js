@@ -5,12 +5,12 @@ const listAllProductsController = async (req, res) => {
     if(ok===true){
         try
         {
-            const data = await listAllProductsService(req);
-            return res.status(201).json(data);
+            const products = await listAllProductsService(req);
+            return res.status(200).json(products);
         }
         catch(err)
         {
-            return res.status(400).json(err.message);
+            return res.status(400).json({message: err.message});
         };
     };
 };

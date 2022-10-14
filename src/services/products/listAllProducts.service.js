@@ -3,9 +3,9 @@ import database from "../../database/index";
 const listAllProductsService = async () => {        
     try{
         const res = await database.query(
-            "SELECT * FROM products RETURNING *"
+            "SELECT * FROM products"
         );
-        return res.rows[0]
+        return res.rows
     } catch(err){
         throw new Error(err);
     };

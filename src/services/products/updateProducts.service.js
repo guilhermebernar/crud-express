@@ -1,9 +1,10 @@
 import database from "../../database/index";
 
-const updateProductsService = async (queryCompiled) => {        
+const updateProductsService = async (id, body) => {        
     try{
         const res = await database.query(
-            queryCompiled
+            "UPDATE products SET name = $1 WHERE id = $2 RETURNING products.id, products.name",
+            [body.name, id]
         )
         return res.rows[0]
     } catch(err){

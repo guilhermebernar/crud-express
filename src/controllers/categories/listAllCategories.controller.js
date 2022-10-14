@@ -6,11 +6,11 @@ const listAllController = async (req, res) => {
         try
         {
             const data = await listAllService(req);
-            return res.status(201).json(data);
+            return res.status(200).json(data);
         }
         catch(err)
         {
-            return res.status(400).json(err.message);
+            return res.status(400).json({message: err.message});
         };
     };
 };

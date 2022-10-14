@@ -3,7 +3,7 @@ import database from "../../database/index";
 const listCategoryService = async (id) => {        
     try{
         const res = await database.query(
-            "SELECT * FROM categories WHERE id = '$1",
+            "SELECT * FROM categories WHERE categories.id = $1",
             [id]
         );
         return res.rows[0]

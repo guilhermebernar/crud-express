@@ -1,9 +1,9 @@
 import database from "../../database/index";
 
-const deleteCategoryService = async (id) => {        
+const deleteProductService = async (id) => {        
     try{
         await database.query(
-            "DELETE FROM categories WHERE id = $1 RETURNING *",
+            "DELETE FROM products WHERE id = $1",
             [id]
         );
     } catch(err){
@@ -11,4 +11,4 @@ const deleteCategoryService = async (id) => {
     };
 };
 
-export default deleteCategoryService;
+export default deleteProductService;
